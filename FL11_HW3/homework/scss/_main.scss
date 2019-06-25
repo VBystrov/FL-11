@@ -1,0 +1,206 @@
+// Write your styles here
+$font-weights: ("regular": 400, "medium": 600, "bold": 700);
+%btnJoin {
+    background-color: $btnJoinColor;
+    color: white;
+    border-width: 0px;
+    padding: 0.8rem 3rem;
+    border-radius: 3px;
+    font-weight: map-get($font-weights, "medium");
+    font-size: 1.3rem;
+    &:hover {
+        background-color: lighten($btnJoinColor, 10%);
+    }
+}
+
+@mixin underline($color, $start:0px, $width:100%, $yCorrection:-0.5em) {
+    position: relative;
+    z-index: 10;
+    &::after {
+        content: " ";
+        display: block;
+        background-color: $color;
+        left: $start;
+        width: $width;
+        position: absolute;
+        text-align: center;
+        top: $yCorrection;
+        height: 0.3em;
+        z-index: -1;
+    }
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    background-color: $bgColor;
+    color: $textColor;
+}
+
+.landing-logo {
+    font-family: $fontFamily2;
+    font-weight: map-get($font-weights, "medium");
+    font-size: 1.5rem;
+    display: flex;
+    img {
+        align-self: center;
+    }
+    p {
+        margin-left: 15px;
+        text-align: center;
+    }
+    span {
+        display: block;
+        font-size: 0.7rem;
+        font-weight: map-get($font-weights, "medium");
+    }
+}
+
+.header {
+    background-image: url($bgImage);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    padding: 0% 0% 0% 15%;
+    border-radius: 40% / 20%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    .header-wrap {
+        display: flex;
+        flex-direction: column;
+        width: 50rem;
+        height: 70%;
+        justify-content: space-between;
+        align-items: flex-start;
+        .header_heading {
+            font-size: 6rem;
+            font-family: $fontFamily1;
+            font-weight: map-get($font-weights, "bold");
+            margin-right: 15%;
+            margin-bottom: 0%;
+            @include underline($start: 0.1rem, $width: 25rem, $color: $underlineColor, $yCorrection: 2em);
+        }
+        .header_text {
+            font-size: 1.3rem;
+            font-family: $fontFamily2;
+            font-weight: map-get($font-weights, "regular");
+            line-height: 140%;
+            text-align: start;
+            width: 45rem;
+        }
+        .header_button {
+            @extend %btnJoin;
+            margin-top: 5rem;
+        }
+    }
+}
+
+.section_text {
+    font-family: $fontFamily1;
+    font-weight: map-get($font-weights, "medium");
+    font-size: 2rem;
+    text-align: center;
+    width: 21rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    @include underline($start: 11rem, $width: 8.8rem, $color: $underlineColor, $yCorrection: 0.8em);
+}
+
+.section_card_wrap {
+    display: flex;
+    justify-content: center;
+    .section_card {
+        font-family: $fontFamily1;
+        text-align: center;
+        font-weight: map-get($font-weights, "medium");
+        font-size: 1.5rem;
+        color: white;
+        width: 20%;
+        margin: 20px;
+        padding: 20px;
+        background-color: $bgCard;
+        border-radius: 5px;
+        .section_card_heading {
+            display: inline-block;
+            margin: 0px;
+            position: relative;
+            z-index: 10;
+            &::after {
+                content: " ";
+                display: inline-block;
+                background-color: $underlineColor;
+                position: relative;
+                bottom: 1.5rem;
+                width: 100%;
+                height: 0.7rem;
+                z-index: -1;
+            }
+        }
+        .section_card_text {
+            color: #b9b9b9;
+            font-weight: map-get($font-weights, "regular");
+            font-size: 1rem;
+            font-family: $fontFamily2;
+        }
+        .section_card_img {
+            width: 100%;
+        }
+    }
+}
+
+.section_banner {
+    width: 700px;
+    margin: 50px auto;
+    padding: 0px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, $gradientColor1, $gradientColor2);
+    border-radius: 5px;
+    font-family: $fontFamily1;
+    .section_banner_heading {
+        font-weight: map-get($font-weights, "medium");
+        font-size: 1.5rem;
+        font-family: $fontFamily1;
+        @include underline($start: 5.9rem, $width: 3.1rem, $color: $underlineColor, $yCorrection: 0.8em);
+    }
+    .section_banner_text {
+        color: #c3c3c3;
+    }
+}
+
+.section_banner_button {
+    @extend %btnJoin;
+}
+
+.footer {
+    background-color: #23232d;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: -115px;
+    position: relative;
+    z-index: -1;
+    font-family: $fontFamily2;
+    .footer-wrap {
+        height: 130px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        color: #c3c3c3;
+        align-items: center;
+        align-self: flex-end;
+        .footer_text {
+            width: 30%;
+        }
+    }
+}
+
+;
