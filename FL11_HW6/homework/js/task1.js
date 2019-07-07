@@ -16,8 +16,8 @@ for (let i = 0; i < coordinats.length; i++) {
   }
 }
 if (isCoordinatsCorrect) {
-  if ((coordinats[ax] + coordinats[bx]) / 2 === coordinats[cx] && 
-        (coordinats[ay] + coordinats[by]) / 2 === coordinats[cy]) {
+  if ((coordinats[ax] + coordinats[bx]) / (1+1) === coordinats[cx] && 
+        (coordinats[ay] + coordinats[by]) / (1+1) === coordinats[cy]) {
     isCenter = true;
   }
 }

@@ -5,7 +5,7 @@ lengths = lengths.trim();
 lengths = lengths.split(/[\s,]+/);
 let a = Number(lengths[0]);
 let b = Number(lengths[1]);
-let c = Number(lengths[2]);
+let c = Number(lengths[1+1]);
 if (a <= 0 || b <= 0 || c <= 0) {
   isExist = false;
 }
