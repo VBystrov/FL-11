@@ -48,40 +48,42 @@ p{
   display: flex;
   align-items: center;
 }
-.item-text{
-  color: #89c4f4;
-  font-size: 1.5rem;
-}
-.edit-text{
-  font-size: 1.2rem;
-  height: 1.5rem;
-  margin-left: 10px;
-  padding-left: 10px;
-}
-.icon-delete{
-  margin-left: auto;
-}
-.icon-checkbox-blank,
-.icon-checkbox-filled,
-.icon-edit,
-.icon-save,
-.icon-delete{
-  color: #89c4f4;
-  font-size: 2rem;
-  padding: 0px 5px;
-}
+  .item-text{
+    color: #89c4f4;
+    font-size: 1.5rem;
+  }
+  .edit-text{
+    font-size: 1.2rem;
+    height: 1.5rem;
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  .icon-delete{
+    margin-left: auto;
+  }
+  .icon-checkbox-blank,
+  .icon-checkbox-filled,
+  .icon-edit,
+  .icon-save,
+  .icon-delete{
+    color: #89c4f4;
+    font-size: 2rem;
+    padding: 0px 5px;
+  }
 .enabled:hover{
   color: #2d96eb;
 }
 .disabled{
   color:rgb(200, 208, 216);
 }
-.check{
-  height: 3rem;
-}
 .hide{
   display: none;
 }
 .notification{
   visibility: hidden;
+}
+.underline{
+  background-color: rgba(137, 196, 244, 0.4);
+  height: 5px;
+  width: 100%;
 }
