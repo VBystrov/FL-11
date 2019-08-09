@@ -1,0 +1,56 @@
+//SMACSS
+@import "variables.less";
+//Base
+body{
+  min-height: 100vh;
+}
+.h2,
+.h3{
+  color: @color-main;
+}
+footer{
+  background-color: @color-footer;
+}
+//Layout
+.l-column{
+  max-width: 1200px;
+  margin: auto;
+}
+//Module
+.navbar-expand-md .navbar-nav .nav-link{
+  padding: 1rem;
+}
+.header{
+  border-bottom: 1px solid @color-main;
+}
+.related-list{
+  padding: 0px;
+}
+.related-list-item{
+  padding: 2px;
+  margin: 15px 0px;
+  &-zumba{
+    background-color: @color-zumba;
+  }
+  &-kickboxing{
+    background-color: @color-kickboxing;
+  }
+  &-bootcamp{
+    background-color: @color-bootcamp;
+  }
+  &-fitness{
+    background-color: @color-fitness;
+  }
+}
+//Submodule
+.related-list-item-text{
+  text-align: center;
+  color: white;
+  margin: 0px;
+  padding: 10px;
+}
+//State
+.navbar-light .navbar-nav .nav-link.active{
+  background-color: @color-main;
+  color:white;
+}
