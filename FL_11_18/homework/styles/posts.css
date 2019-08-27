@@ -1,0 +1,15 @@
+.posts-list{
+  width: 30%;
+  margin: auto;
+}
+
+.post{
+  border: 5px solid cornflowerblue;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+.post__text{
+  margin-left:20px;
+  margin-bottom: 30px;
+}
