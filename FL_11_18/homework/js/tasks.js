@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
   const userList = document.getElementsByClassName('users-list')[0];
   const loader = document.getElementById("loader");
   let userArray;
-  setTimeout(()=>loader.classList.add("loader_hidden"), 10000);
+  setTimeout(() => loader.classList.add("loader_hidden"), 10000);
   fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
     .then(json => {
@@ -68,8 +68,8 @@ window.addEventListener('load', function () {
     user.getElementsByClassName('user__edit-button')[0].classList.remove('user__edit-button_hidden');
     user.getElementsByClassName('user__save-button')[0].classList.add('user__save-button_hidden');
     let userIndex;
-    for(let i=0; i<userArray.length; i++){
-      if(userArray[i].id===parseInt(user.id)){
+    for (let i = 0; i < userArray.length; i++) {
+      if (userArray[i].id === parseInt(user.id)) {
         userIndex = i;
         break;
       }
@@ -83,36 +83,36 @@ window.addEventListener('load', function () {
       }
     };
     loader.classList.remove("loader_hidden");
-    setTimeout(()=>loader.classList.add("loader_hidden"), 10000);
+    setTimeout(() => loader.classList.add("loader_hidden"), 10000);
     fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`, myInit)
       .then(response => response.json())
       .then((json) => loader.classList.add("loader_hidden"));
   }
 
-  function deleteUser(event){
+  function deleteUser(event) {
     let user = event.target;
     while (!user.classList.contains('user')) {
       user = user.parentElement;
     }
     loader.classList.remove("loader_hidden");
-    setTimeout(()=>loader.classList.add("loader_hidden"), 10000);
+    setTimeout(() => loader.classList.add("loader_hidden"), 10000);
     fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`, {
       method: 'DELETE'
     })
       .then(response => response.json())
       .then((json) => loader.classList.add("loader_hidden"));
     let userIndex;
-    for(let i=0; i<userArray.length; i++){
-      if(userArray[i].id===parseInt(user.id)){
+    for (let i = 0; i < userArray.length; i++) {
+      if (userArray[i].id === parseInt(user.id)) {
         userIndex = i;
         break;
       }
     }
-    userArray.splice(userIndex,1);
+    userArray.splice(userIndex, 1);
     userList.removeChild(user);
   }
 
-  function showPosts(event){
+  function showPosts(event) {
     let user = event.target;
     while (!user.classList.contains('user')) {
       user = user.parentElement;
@@ -120,5 +120,4 @@ window.addEventListener('load', function () {
     var win = window.open(`./posts.html#${user.id}`, '_blank');
     win.focus();
   }
-
 });
