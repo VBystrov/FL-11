@@ -1,0 +1,32 @@
+@import 'colors.scss';
+
+body {
+  background-color: $themeColor-Light;
+}
+.container {
+  width: 50%;
+  margin: auto;
+  font-size: 1.3rem;
+  .header {
+    text-align: center;
+    color: $themeColor-Dark;
+  }
+  .image-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    img{
+      border: 2px solid black;
+      box-shadow: 10px 10px grey;
+      &:hover{
+        box-shadow: 5px 5px rgb(158, 158, 158);
+      }
+    }
+  }
+  .button-container{
+    display: flex;
+  }
+  .button{
+    margin: 20px auto;
+  }
+}
