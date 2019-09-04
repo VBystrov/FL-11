@@ -1,0 +1,10 @@
+.item {
+  background-image: linear-gradient(white, rgb(250, 250, 250));
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+}
