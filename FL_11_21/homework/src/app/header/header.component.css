@@ -1,0 +1,23 @@
+.source-name {
+  padding: 20px;
+  background-color: #87cefa;
+  color: #005488;
+  text-align: center;
+  margin: 0px;
+}
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid #87cefa;
+}
+input[type='button'] {
+  background-color: #87cefa;
+  border-color: #87cefa;
+  margin: 10px;
+  border-radius: 5px;
+}
+.input {
+  color: #005488;
+}
