@@ -10,7 +10,6 @@ import { map } from 'rxjs/operators';
 export class NewsComponent implements OnInit {
   sources: AngularFireList<any>;
   keysSources = [];
-  countSources: number = 0;
   source: any;
   activeSource: string;
   activeSourceName: string;
@@ -24,27 +23,70 @@ export class NewsComponent implements OnInit {
     this.sources = this.db.list('/sources', ref => ref.limitToFirst(11));
     this.sources.snapshotChanges().subscribe(tmp => {
       this.keysSources = tmp;
-      this.countSources = tmp.length;
-      console.log(this.keysSources);
     });
+    this.activeSource = 'All sources';
+    this.activeSourceName = 'All sources';
+    let tmp = '/news/';
+    this.newsList = [];
+    this.db
+      .list(tmp)
+      .snapshotChanges()
+      .subscribe(tmp => {
+        tmp.forEach((tmp: any) => {
+          tmp.payload.val().forEach((item: any) => {
+            this.newsList.push({
+              text: item.text,
+              title: item.title,
+              image: item.image
+            });
+          });
+        });
+      });
   }
 
   updateNews(event) {
     this.activeSource = event.target.value;
     this.activeSourceName = event.target.selectedOptions[0].text;
-    console.log(event.target);
-    console.log(event.target.selectedOptions);
-    console.log(this.activeSource);
     if (this.activeSource != 'All sources') {
       let tmp = '/news/' + this.activeSource;
       this.db
         .list(tmp)
         .snapshotChanges()
         .subscribe(tmp => {
-          this.newsList = tmp;
-          this.countSources = tmp.length;
-          console.log(this.keysSources);
+          this.newsList = tmp.map((item: any) => {
+            return {
+              text: item.payload.val().text,
+              title: item.payload.val().title,
+              image: item.payload.val().image
+            };
+          });
+        });
+    } else {
+      let tmp = '/news/';
+      this.newsList = [];
+      this.db
+        .list(tmp)
+        .snapshotChanges()
+        .subscribe(tmp => {
+          tmp.forEach((tmp: any) => {
+            tmp.payload.val().forEach((item: any) => {
+              this.newsList.push({
+                text: item.text,
+                title: item.title,
+                image: item.image
+              });
+            });
+          });
         });
     }
+  }
+
+  filterNews() {
+    let arr = [];
+    arr = this.newsList.filter(item => {
+      return item.title.indexOf(this.filterText) !== -1;
+    });
+    this.newsList=[];
+    this.newsList.push(...arr);
   }
 }

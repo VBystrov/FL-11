@@ -10,14 +10,13 @@
     <input class="input" type="button" value="Filter" (click)="filterNews()">
   </div>
   <input class="input" type="button" value="Add article">
-  <a routerLink="add">Add article</a>
 </div>
 <section>
   <div class="news-item" *ngFor="let news of newsList">
-    <h2 class="news-header">{{news.payload.val().title}}</h2>
+    <h2 class="news-header">{{news.title}}</h2>
     <div>
-      <img class="news-image" src={{news.payload.val().image}} alt="news-picture">
-      <p>{{news.payload.val().text}}</p>
+      <img class="news-image" src={{news.image}} alt="news-picture">
+      <p>{{news.text}}</p>
     </div>
   </div>
 </section>
