@@ -1,0 +1,23 @@
+<h1 class="source-name">{{activeSourceName}}</h1>
+<div class="menu">
+  <select class="input" (change)="updateNews($event)">
+    <option *ngFor="let source of keysSources" value={{source.payload.val().adress}}>{{source.payload.val().name}}
+    </option>
+    <option value="All sources">All sources</option>
+  </select>
+  <div>
+    <input class="input" type="text" placeholder="Type your text..." [(ngModel)]="filterText">
+    <input class="input" type="button" value="Filter" (click)="filterNews()">
+  </div>
+  <input class="input" type="button" value="Add article">
+  <a routerLink="add">Add article</a>
+</div>
+<section>
+  <div class="news-item" *ngFor="let news of newsList">
+    <h2 class="news-header">{{news.payload.val().title}}</h2>
+    <div>
+      <img class="news-image" src={{news.payload.val().image}} alt="news-picture">
+      <p>{{news.payload.val().text}}</p>
+    </div>
+  </div>
+</section>
