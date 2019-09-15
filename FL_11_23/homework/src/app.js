@@ -37,4 +37,28 @@ class Decorator {
     }
     return _user;
   }
+
+  static setBonus(user) {
+    const _user = user;
+    const bonus = Math.floor(_user.orderTotalPrice / 100) * 5;
+    if (bonus) {
+      _user.bonus = bonus;
+    }
+    return _user;
+  }
 }
+/*
+const u1 = new User('George');
+u1.orderTotalPrice = 351;
+console.log(u1.makeOrder());
+console.log(JSON.stringify(u1));
+Decorator.getWeekendDiscount(u1);
+console.log(u1.makeOrder());
+console.log(JSON.stringify(u1));
+Decorator.getDiscount(u1);
+console.log(u1.makeOrder());
+console.log(JSON.stringify(u1));
+Decorator.setBonus(u1);
+console.log(u1.makeOrder());
+console.log(JSON.stringify(u1));
+*/
