@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>FL10 Homework</title>
+	</head>
+	<body>
+		<div class="root" id="root">
+      <div id="search">
+        <div class="search-wrap">
+          <label for="search-input">Search by name:</label>
+          <input id="search-input" type="text" placeholder="Enter user name...">
+        </div>
+      </div>
+      <div id="table">
+        <table class="table">
+          <thead class="table-header">
+          <tr >
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Adress</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Timezone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+        </table>
+      </div>
+      <div id="count">
+        <p>Displayed <span id="count-displayed">5</span> users out of <span id="count-total">21</span></p>
+        <input id="load" type="button" value="LOAD MORE">
+      </div>
+    </div>
+	</body>
+</html>

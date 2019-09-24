@@ -1,0 +1,24 @@
+#count {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: 15px 0px;
+  box-sizing: border-box;
+  box-shadow: 0px -5px 10px grey;
+  background-color: white;
+}
+#load {
+  width: 400px;
+  padding: 15px;
+  background-color: rgb(235, 235, 235);
+  border-radius: 30px;
+  font-size: 1.1rem;
+}
+.hidden{
+  visibility: hidden;
+}
