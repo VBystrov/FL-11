@@ -48,7 +48,7 @@ router.put('/car/:id', function(req, res) {
       res.status(200).send(cars[i]);
     }
   }
-  if(!carExists){
+  if (!carExists) {
     res.status(404).send({ error: 'Car not found' });
   }
 });
@@ -62,7 +62,7 @@ router.delete('/car/:id', function(req, res) {
       res.status(200).send({ message: 'The car has been successfully removed' });
     }
   }
-  if(!carExists){
+  if (!carExists) {
     res.status(404).send({ message: 'Car not found' });
   }
 });
